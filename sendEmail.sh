@@ -107,7 +107,18 @@ echo "t" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
 echo "e" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
 echo "semicolon" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
 echo "5" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
-echo "0" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
+echo "3" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
+echo "o" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
+echo "l" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
+echo "left-shift semicolon" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
+echo "q" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
+echo "i" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
+echo "l" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
+echo "left-shift i" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
+echo "t" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
+echo "e" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
+echo "semicolon" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
+echo "3" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
 echo "minus" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null
 usleep 0
 echo "enter" | ./hid-gadget-test /dev/hidg0 keyboard > /dev/null

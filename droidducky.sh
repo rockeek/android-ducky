@@ -581,8 +581,8 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 			    kbcode=$(convert-ch-fr "${info:$i:1}")
 
             elif [ "$key_layout" == "fr" ]
-            then kbcode=$(convert-fr "${info:$i:1}")
-
+            then 
+            	kbcode=$(convert-fr "${info:$i:1}")
             else
                 kbcode=$(convert "${info:$i:1}")
             fi
