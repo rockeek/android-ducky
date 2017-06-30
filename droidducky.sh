@@ -6,6 +6,7 @@
 function usage() { echo "Usage: $0 [-h help -d dryrun -v verbose -k {us, fr}] -f <duckfile_to_execute>" 1>&2; exit 1; }
 #
 # Copyright (C) 2015 - Andrej Budinčević <andrew@hotmail.rs>
+# Copyright (C) 2017 - Rockeek <rockeek@yahoo.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
