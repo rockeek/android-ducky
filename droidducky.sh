@@ -197,10 +197,23 @@ function convert-fr()
 {
 	local kbcode=""
 
-	if [ "$1" == " " ]
-	then
-		kbcode='space'
+	if [ "$1" == " " ]; then kbcode='space';
+	elif [ "$1" == "à" ]; then kbcode='0';
+	elif [ "$1" == "0" ]; then kbcode='kp-0';
+	elif [ "$1" == "1" ]; then kbcode='kp-1';
+	elif [ "$1" == "2" ]; then kbcode='kp-2';
+	elif [ "$1" == "3" ]; then kbcode='kp-3';
+	elif [ "$1" == "4" ]; then kbcode='kp-4';
+	elif [ "$1" == "5" ]; then kbcode='kp-5';
+	elif [ "$1" == "6" ]; then kbcode='kp-6';
+	elif [ "$1" == "7" ]; then kbcode='kp-7';
+	elif [ "$1" == "8" ]; then kbcode='kp-8';
+	elif [ "$1" == "9" ]; then kbcode='kp-9';
 	
+	elif [ "$1" == "é" ]
+	then
+		kbcode='2'
+		
 	elif [ "$1" == "!" ]
 	then
 		kbcode='slash'
@@ -225,6 +238,10 @@ function convert-fr()
 	then
 		kbcode='equal'
 	
+	elif [ "$1" == "ç" ]
+	then
+		kbcode='9'
+	
 	elif [ "$1" == "_" ]
 	then
 		kbcode='8'
@@ -232,6 +249,10 @@ function convert-fr()
 	elif [ "$1" == "-" ]
 	then
 		kbcode='6'
+	
+	elif [ "$1" == "è" ]
+	then
+		kbcode='7'
 	
 	elif [ "$1" == "\"" ]
 	then
@@ -565,6 +586,8 @@ function convert-ch-fr()
 }
 
 (( do_dry )) && echo "#####dry mode#####"
+#Force numlock on. 
+execute "if [ \"\$(echo numlock | ./hid-gadget-test /dev/hidg0 keyboard | tr -dc '0-9')\" = '01' ]; then echo numlock | ./hid-gadget-test /dev/hidg0 keyboard; fi > /dev/null"
 while IFS='' read -r line || [[ -n "$line" ]]; do
 	((line_num++))
 	read -r cmd info <<< "$line"
@@ -661,8 +684,8 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 
 	elif [ "$cmd" == "REM" ] 
 	then
-		execute "echo \"$info\""
-
+		#execute "echo \"$info\""
+		:
 	elif [ "$cmd" == "SHIFT" ] 
 	then
 		if [ "$info" == "DELETE" -o "$info" == "END" -o "$info" == "HOME" -o "$info" == "INSERT" -o "$info" == "PAGEUP" -o "$info" == "PAGEDOWN" -o "$info" == "SPACE" -o "$info" == "TAB" ] 
@@ -840,3 +863,4 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 
 	execute "usleep $defdelay"
 done < "$duckfile"
+echo
